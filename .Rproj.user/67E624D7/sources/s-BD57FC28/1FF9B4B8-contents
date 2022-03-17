@@ -4,8 +4,8 @@ library(shiny)
 library(shinydashboard)
 library(shinythemes)
 library(shinycssloaders)
-source("pages.R")
-source("global.R")
+source("pages.r")
+source("global.r")
 
 
 

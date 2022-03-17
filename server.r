@@ -1,8 +1,8 @@
 library(dplyr)
 library(shiny)
 library(stringr)
-source("global.R")
-source("pages.R")
+source("global.r")
+source("pages.r")
 
 shinyServer(
   function(input, output, session) {

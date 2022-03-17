@@ -1,4 +1,4 @@
-source("global.R")
+source("global.r")
 
 header = dashboardHeader(title = '', titleWidth = 350)
 
