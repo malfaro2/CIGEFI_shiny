@@ -93,7 +93,7 @@ shinyServer(
           
           date_fixed = date$when[date$when1 == input$option]
           
-          filename = paste0('Prec_bimonth/',date_fixed,'/', 'prec', '_bimonth_index', index_for_photo,'_', date_fixed, '.png')
+          filename = paste0('Prec_bimonth/',date_fixed,'/', 'prec', '_bimonth_index', index_for_photo,'_', date_fixed,'_', input$index,'.png')
           
           list(src = filename , width = '500px', height = '350px')
           
@@ -236,7 +236,7 @@ shinyServer(
         number_of_month = number_months$num_month[number_months$month == input$option]
         variable        = data %>% filter(option == input$variable) %>% select(option2)
         
-        filename4 = paste0('https://raw.githubusercontent.com/tefii2031/CIGEFI/main/shiny_app2/','boxplot_monthly/','boxplot_' , unique(variable) ,'_', input$index,'_mes', number_of_month, '.png')
+        filename4 = paste0('https://raw.githubusercontent.com/malfaro2/CIGEFI_shiny/main/','boxplot_monthly/','boxplot_' , unique(variable) ,'_', input$index,'_mes', number_of_month, '.png')
         url4=  paste0('<img src="', filename4 ,'" width="850" height="600">')
         showModal(modalDialog(
           title = 'Boxplot',
@@ -248,7 +248,7 @@ shinyServer(
         
         variable        = data %>% filter(option == input$variable) %>% select(option2)
         
-        filename4 = paste0('https://raw.githubusercontent.com/tefii2031/CIGEFI/main/shiny_app2/','boxplot_yearly/' ,'boxplot_', unique(variable), '_', input$index, '_year.png')
+        filename4 = paste0('https://raw.githubusercontent.com/malfaro2/CIGEFI_shiny/main/','boxplot_yearly/' ,'boxplot_', unique(variable), '_', input$index, '_year.png')
         url4=  paste0('<img src="', filename4 ,'" width="850" height="600" >')
         showModal(modalDialog(
           title = 'Boxplot',
@@ -258,7 +258,7 @@ shinyServer(
         
         variable        = data %>% filter(option == input$variable) %>% select(option2)
         
-        filename4 = paste0('https://raw.githubusercontent.com/tefii2031/CIGEFI/main/shiny_app2/','boxplot_bimonthly/' ,'boxplot_', unique(variable), '_', input$index, '_bimonth_',input$option ,'.png')
+        filename4 = paste0('https://raw.githubusercontent.com/malfaro2/CIGEFI_shiny/main/','boxplot_bimonthly/' ,'boxplot_', unique(variable), '_', input$index, '_bimonth_',input$option ,'.png')
         url4=  paste0('<img src="', filename4 ,'" width="850" height="600" >')
         showModal(modalDialog(
           title = 'Boxplot',
@@ -277,7 +277,7 @@ shinyServer(
         
         index_for_photo_holvmoller = data$index_number[data$Index == input$index]
         
-        filename5 = paste0('https://raw.githubusercontent.com/tefii2031/CIGEFI/main/shiny_app2/','hovmoller_temp/','index_', index_for_photo_holvmoller, '.png')
+        filename5 = paste0('https://raw.githubusercontent.com/malfaro2/CIGEFI_shiny/main/','hovmoller_temp/','index_', index_for_photo_holvmoller, '.png')
         url5 =  paste0('<img src="', filename5 ,'"  width="850" height="600"  >')
         showModal(modalDialog(
           title = 'Boxplot',
@@ -287,7 +287,7 @@ shinyServer(
         
         
         index_for_photo_holvmoller = data$index_number[data$Index == input$index]
-        filename4 = paste0('https://raw.githubusercontent.com/tefii2031/CIGEFI/main/shiny_app2/','hovmoller_prec/' ,input$index, '.png')
+        filename4 = paste0('https://raw.githubusercontent.com/malfaro2/CIGEFI_shiny/main/','hovmoller_prec/' ,input$index, '.png')
         url4 =  paste0('<img src="', filename4 ,'" width="850" height="600" >')
         showModal(modalDialog(
           title = 'Boxplot',
