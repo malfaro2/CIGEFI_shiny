@@ -19,7 +19,7 @@ shinyServer(
       } else if(input$index == 'SDII' || input$index == 'R99p'){
         updateSelectInput(session, "time", "Time", choices  = c("Yearly"="year"))
       } else {
-        updateSelectInput(session, "time", "Time", choices  = c("Yearly"="year", 'Bimonthly' = 'bimonth' , 'Monyhly' = 'month'))
+        updateSelectInput(session, "time", "Time", choices  = c("Yearly"="year", 'Bimonthly' = 'bimonth' , 'Monthly' = 'month'))
       }
     })
     

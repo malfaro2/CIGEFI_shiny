@@ -1,0 +1,11 @@
+name: cigefi_shiny
+title:
+username:
+account: macordob
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5872362
+bundleId: 5694033
+url: https://macordob.shinyapps.io/cigefi_shiny/
+when: 1647492100.5445
+lastSyncTime: 1647492100.5445
