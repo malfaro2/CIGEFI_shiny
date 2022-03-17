@@ -16,7 +16,7 @@ shinyServer(
     observe({
       if(input$index == 'R99p'){
         updateSelectInput(session, "time", "Time", choices  = c("Yearly"="year", 'Bimonthly' = 'bimonth'))
-      } else if(input$index == 'SDII'){
+      } else if(input$index == 'SDII' || input$index == 'R99p'){
         updateSelectInput(session, "time", "Time", choices  = c("Yearly"="year"))
       } else {
         updateSelectInput(session, "time", "Time", choices  = c("Yearly"="year", 'Bimonthly' = 'bimonth' , 'Monyhly' = 'month'))
@@ -92,10 +92,16 @@ shinyServer(
           index_for_photo = data$index_number[data$Index == input$index]
           
           date_fixed = date$when[date$when1 == input$option]
-          
-          filename = paste0('Prec_bimonth/',date_fixed,'/', 'prec', '_bimonth_index', index_for_photo,'_', date_fixed,'_', input$index,'.png')
-          
-          list(src = filename , width = '500px', height = '350px')
+          if (index_for_photo <= 6 ){
+            filename = paste0('Prec_bimonth/',date_fixed,'/', 'prec', '_bimonth_index', index_for_photo,'_', date_fixed,'_', input$index,'.png')
+            
+            list(src = filename , width = '500px', height = '350px')
+          } else {
+            index_for_photo = index_for_photo - 1 
+            filename = paste0('Prec_bimonth/',date_fixed,'/', 'prec', '_bimonth_index', index_for_photo,'_', date_fixed,'_', input$index,'.png')
+            
+            list(src = filename , width = '500px', height = '350px')
+          }
           
         } else if (input$time == 'month' && input$variable == 'Temperature') {
           
@@ -257,8 +263,8 @@ shinyServer(
       } else {
         
         variable        = data %>% filter(option == input$variable) %>% select(option2)
-        
-        filename4 = paste0('https://raw.githubusercontent.com/malfaro2/CIGEFI_shiny/main/','boxplot_bimonthly/' ,'boxplot_', unique(variable), '_', input$index, '_bimonth_',input$option ,'.png')
+        option          = date$when[date$when1 == input$option]
+        filename4 = paste0('https://raw.githubusercontent.com/malfaro2/CIGEFI_shiny/main/','boxplot_bimonthly/' ,'boxplot_', unique(variable), '_', input$index, '_bimonth_',option ,'.png')
         url4=  paste0('<img src="', filename4 ,'" width="850" height="600" >')
         showModal(modalDialog(
           title = 'Boxplot',
