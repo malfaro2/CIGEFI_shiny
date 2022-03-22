@@ -5,7 +5,7 @@ account: macordob
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5872362
-bundleId: 5694033
+bundleId: 5711491
 url: https://macordob.shinyapps.io/cigefi_shiny/
-when: 1647492100.5445
-lastSyncTime: 1647492100.5445
+when: 1647919829.28418
+lastSyncTime: 1647919829.28418
