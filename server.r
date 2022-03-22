@@ -39,34 +39,28 @@ shinyServer(
     
     output$index_name = renderText({
       
-      if(input$update){paste('Index name: ')}
+      if(input$update){paste('')}
       else{paste('Update variables on the left, and click update')}
       
     })
     
     output$name_selected = renderText({
       
-      input$update
-      isolate(
-        paste(data$names_index[data$Index == input$index])
-      )
+      if(input$update){isolate(paste('Index name: ',data$names_index[data$Index == input$index]))}
+      else{paste(' ')}
       
     })
     
     output$text_selected = renderText({
       
-      input$update
-      isolate(
-        
-        paste(data$text[data$Index == input$index])
-        
-      )
+      if(input$update){isolate(paste('Definition: ',data$text[data$Index == input$index]))}
+      else{paste(' ')}
     })
     
     
     
     output$units = renderText({
-      if(input$update){isolate(paste('Index units:', data$units[data$Index == input$index]))}
+      if(input$update){isolate(paste('Units:', data$units[data$Index == input$index]))}
       else{paste(' ')}
     })
     
